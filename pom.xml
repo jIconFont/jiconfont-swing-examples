@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jiconfont</groupId>
-    <artifactId>jiconfont-swing-demo</artifactId>
+    <artifactId>jiconfont-swing-examples</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <name>jIconFont - Swing - Demo</name>
+    <name>jIconFont - Swing - Examples</name>
 
     <dependencies>
         <dependency>
