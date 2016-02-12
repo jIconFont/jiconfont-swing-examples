@@ -1,11 +1,14 @@
-package jiconfont.swing.demo;
+package jiconfont.examples.swing;
 
-import jiconfont.fontawesome.FontAwesome;
-import jiconfont.swing.IconBuilderSwing;
+import jiconfont.icons.FontAwesome;
+import jiconfont.swing.IconFontSwing;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.FlowLayout;
 
 /**
  * Copyright (c) 2016 jIconFont <BR>
@@ -28,27 +31,29 @@ import java.awt.GridLayout;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-public class TestSwing extends JFrame {
+public class Example4 extends JFrame {
 
-  public TestSwing() {
-    JPanel panel = new JPanel();
-    panel.setBackground(Color.WHITE);
-    panel.setLayout(new GridLayout(0, 20));
+    public Example4() {
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.WHITE);
+        panel.setLayout(new FlowLayout());
 
-    for (FontAwesome icon : FontAwesome.values()) {
-      Icon i = IconBuilderSwing.newIcon(icon).setSize(25).buildIcon();
-      panel.add(new JLabel(i));
+        IconFontSwing.register(FontAwesome.getIconFont());
+
+        JButton button = new JButton("Save");
+        Icon icon = IconFontSwing.buildIcon(FontAwesome.FLOPPY_O, 15);
+        button.setIcon(icon);
+
+        button.setFocusable(false);
+        panel.add(button);
+        add(panel);
+
+        setSize(200, 200);
+        setLocationRelativeTo(null);
     }
 
-    add(new JScrollPane(panel));
-
-    setSize(950, 650);
-    setLocationRelativeTo(null);
-
-  }
-
-  public static void main(String args[]) {
-    TestSwing test = new TestSwing();
-    test.setVisible(true);
-  }
+    public static void main(String args[]) {
+        Example4 test = new Example4();
+        test.setVisible(true);
+    }
 }
