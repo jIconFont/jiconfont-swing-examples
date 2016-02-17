@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.io.InputStream;
 
 /**
@@ -56,7 +57,7 @@ public class Example5 extends JFrame {
 
 
         IconCode iconCode = new DefaultIconCode("Entypo", '\uF118');
-        Icon icon = IconFontSwing.buildIcon(iconCode, 40, new java.awt.Color(0, 150, 0));
+        Icon icon = IconFontSwing.buildIcon(iconCode, 40, new Color(0, 150, 0));
         JLabel label = new JLabel(icon);
 
         panel.add(label);
