@@ -1,14 +1,16 @@
 package jiconfont.examples.swing;
 
-import jiconfont.icons.FontAwesome;
+import jiconfont.DefaultIconCode;
+import jiconfont.IconCode;
+import jiconfont.IconFont;
 import jiconfont.swing.IconFontSwing;
 
 import javax.swing.Icon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.BorderLayout;
+import java.io.InputStream;
 
 /**
  * Copyright (c) 2016 jIconFont <BR>
@@ -31,22 +33,33 @@ import java.awt.FlowLayout;
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-public class Example4 extends JFrame {
+public class Example5 extends JFrame {
 
-    public Example4() {
+    public Example5() {
         JPanel panel = new JPanel();
-        panel.setBackground(Color.WHITE);
-        panel.setLayout(new FlowLayout());
+        panel.setBackground(java.awt.Color.WHITE);
+        panel.setLayout(new BorderLayout());
 
-        // Register the IconFont
-        IconFontSwing.register(FontAwesome.getIconFont());
 
-        JButton button = new JButton("Save");
-        Icon icon = IconFontSwing.buildIcon(FontAwesome.FLOPPY_O, 15);
-        button.setIcon(icon);
+        // Register my custom IconFont
+        IconFontSwing.register(new IconFont() {
+            @Override
+            public String getFontFamily() {
+                return "Entypo";
+            }
 
-        button.setFocusable(false);
-        panel.add(button);
+            @Override
+            public InputStream getFontInputStream() {
+                return Example5.class.getResourceAsStream("/entypo.ttf");
+            }
+        });
+
+
+        IconCode iconCode = new DefaultIconCode("Entypo", '\uF118');
+        Icon icon = IconFontSwing.buildIcon(iconCode, 40, new java.awt.Color(0, 150, 0));
+        JLabel label = new JLabel(icon);
+
+        panel.add(label);
         add(panel);
 
         setSize(200, 200);
@@ -54,7 +67,7 @@ public class Example4 extends JFrame {
     }
 
     public static void main(String args[]) {
-        Example4 test = new Example4();
+        Example1 test = new Example1();
         test.setVisible(true);
     }
 }

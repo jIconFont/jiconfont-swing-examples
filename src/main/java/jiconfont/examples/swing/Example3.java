@@ -38,6 +38,7 @@ public class Example3 extends JFrame {
         panel.setBackground(Color.WHITE);
         panel.setLayout(new FlowLayout());
 
+        // Register the IconFont
         IconFontSwing.register(FontAwesome.getIconFont());
 
         Icon icon = IconFontSwing.buildIcon(FontAwesome.FLOPPY_O, 15);

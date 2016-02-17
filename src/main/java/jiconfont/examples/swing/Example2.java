@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 
 /**
  * Copyright (c) 2016 jIconFont <BR>
@@ -36,8 +37,9 @@ public class Example2 extends JFrame {
     public Example2() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);
-        panel.setLayout(new BorderLayout());
+        panel.setLayout(new FlowLayout());
 
+        // Register the IconFont
         IconFontSwing.register(FontAwesome.getIconFont());
 
         JLabel label = new JLabel("Hello!");
