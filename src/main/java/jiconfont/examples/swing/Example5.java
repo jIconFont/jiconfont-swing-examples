@@ -1,17 +1,16 @@
 package jiconfont.examples.swing;
 
-import jiconfont.DefaultIconCode;
-import jiconfont.IconCode;
-import jiconfont.IconFont;
-import jiconfont.swing.IconFontSwing;
-
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.io.InputStream;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.io.InputStream;
+import jiconfont.DefaultIconCode;
+import jiconfont.IconCode;
+import jiconfont.IconFont;
+import jiconfont.swing.IconFontSwing;
 
 /**
  * Copyright (c) 2016 jIconFont <BR>

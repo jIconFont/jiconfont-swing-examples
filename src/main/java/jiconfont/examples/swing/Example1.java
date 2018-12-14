@@ -1,14 +1,13 @@
 package jiconfont.examples.swing;
 
-import jiconfont.icons.FontAwesome;
-import jiconfont.swing.IconFontSwing;
-
+import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Color;
+import jiconfont.icons.font_awesome.FontAwesome;
+import jiconfont.swing.IconFontSwing;
 
 /**
  * Copyright (c) 2016 jIconFont <BR>
